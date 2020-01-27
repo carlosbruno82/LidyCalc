@@ -3,14 +3,18 @@ import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 import logo from '../assets/logo.png'
 
-export default function Home() {
+export default function Home({ navigation }) {
+  function handleSubmit() {
+    navigation.navigate('Calc')
+  }
+  
   return (
     <View style={styles.container}>
       <Image source={logo} />
 
       <Text style={styles.welcome}>Seja bem-vinda(o) ao LidyCalc</Text>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={handleSubmit} style={styles.button}>
         <Text style={styles.buttonText}>Clique aqui para começar</Text>
       </TouchableOpacity>
     </View>
