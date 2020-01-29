@@ -1,33 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, AsyncStorage, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default function Result({ navigation }) {
-  const [result, setResult] = useState('')
-
-  useEffect(() => {
-    AsyncStorage.getItem('resultado').then(total => {
-      const Resultado = total
-
-      setResult(Resultado)
-    })
-
-    // AsyncStorage.clear()
-  
-  }, [])
-
   function handleSubmit() {
     navigation.navigate('Calc')
   }
 
   return ( 
     <View style={styles.container}>
-        {result === 'NaN' ? 
+       {navigation.getParam('resultado') === 'NaN' ? 
           <Text style={ styles.erro }>
             {'Preencha corretamente \npara obter o resultado'}
           </Text> 
             : 
           <Text style={ styles.resultado }>
-            {result}
+            {navigation.getParam('resultado')}
           </Text>
         }
       
@@ -41,7 +28,8 @@ export default function Result({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    marginTop: 300,
     justifyContent: 'center',
     alignItems: 'center',
   },

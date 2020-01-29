@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, AsyncStorage, KeyboardAvoidingView, Platform, Image, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, KeyboardAvoidingView, Platform, Image, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 import logo from '../assets/logo.png'
 
@@ -16,9 +16,8 @@ export default function Calc({ navigation }) {
 
     const regraTres = parseInt(((m * p) / a)).toString()
 
-    AsyncStorage.setItem('resultado', regraTres )
-
-    navigation.navigate('Result')
+    navigation.navigate('Result', {
+      resultado: regraTres})
   }
   
   return (
