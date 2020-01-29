@@ -14,7 +14,7 @@ export default function Calc({ navigation }) {
     const m = parseInt(medida)
     const p = parseInt(pontos)
 
-    let regraTres = ((m * p) / a).toString()
+    const regraTres = parseInt(((m * p) / a)).toString()
 
     AsyncStorage.setItem('resultado', regraTres )
 
