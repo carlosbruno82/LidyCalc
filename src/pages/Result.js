@@ -32,7 +32,7 @@ export default function Result({ navigation }) {
         }
       
       <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-        <Text style={styles.buttonText}>clique aqui para voltar</Text>
+        <Text style={styles.buttonText}>Clique aqui para voltar</Text>
       </TouchableOpacity>
     </View>
   )
