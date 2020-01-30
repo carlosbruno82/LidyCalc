@@ -12,7 +12,7 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Image source={logo} />
 
-      <Text style={styles.welcome}>Seja bem-vinda(o) ao LidyCalc</Text>
+      <Text style={styles.welcome}>Seja bem-vinda(o) ao Lidy Calc</Text>
 
       <TouchableOpacity onPress={handleSubmit} style={styles.button}>
         <Text style={styles.buttonText}>Clique aqui para começar</Text>
